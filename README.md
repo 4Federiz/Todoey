@@ -1,6 +1,4 @@
-# todoey
-
-A new Flutter application.
+# Todoey
 
 ## Getting Started
 
