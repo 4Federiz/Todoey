@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey/models/task_data.dart';
 import 'package:todoey/widgets/tasks_add.dart';
 import 'package:todoey/widgets/tasks_list.dart';
-import 'package:todoey/models/task.dart';
 
-class TasksScreens extends StatefulWidget {
-  @override
-  _TasksScreensState createState() => _TasksScreensState();
-}
-
-class _TasksScreensState extends State<TasksScreens> {
-  List<Task> tasks = [
-    Task(name: 'Buy milk', isDone: true),
-    Task(name: 'Buy beer')
-  ];
-
+class TasksScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +21,10 @@ class _TasksScreensState extends State<TasksScreens> {
                       padding: EdgeInsets.only(
                           bottom: MediaQuery.of(context).viewInsets.bottom),
                       child: AddTaskScreen((newTaskTitle) {
-                        setState(() {
-                          newTaskTitle ?? tasks.add(Task(name: "Don't hit the green arrow: Null value."));
-                          tasks.add(Task(name: newTaskTitle));
-                        });
+//                        setState(() {
+//                          newTaskTitle ?? tasks.add(Task(name: "Don't hit the green arrow: Null value."));
+//                          tasks.add(Task(name: newTaskTitle));
+//                        });
                         Navigator.pop(context);
                       }),
                     ),
@@ -72,7 +63,7 @@ class _TasksScreensState extends State<TasksScreens> {
                     ),
                   ),
                   Text(
-                    '${tasks.length} tasks',
+                    '${Provider.of<TaskData>(context).taskCount} tasks',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -83,7 +74,7 @@ class _TasksScreensState extends State<TasksScreens> {
             ),
             Expanded(
               child: Container(
-                child: TasksList(tasks),
+                child: TasksList(),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
