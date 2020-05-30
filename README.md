@@ -1,4 +1,2 @@
 # Todoey
-
-![todoey Demo](todoey.gif = 250x250)
-
+<img src=todoey.gif width="250" height="250"/>
