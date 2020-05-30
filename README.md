@@ -1,4 +1,4 @@
 # Todoey
 
-## This will be updated soon
+![todoey Demo](todoey.gif)
 
