@@ -1,2 +1,2 @@
 # Todoey
-<img src=todoey.gif width="250" height="250"/>
+<img src=todoey.gif width="250" height="500"/>
