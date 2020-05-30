@@ -20,13 +20,7 @@ class TasksScreens extends StatelessWidget {
                     child: Container(
                       padding: EdgeInsets.only(
                           bottom: MediaQuery.of(context).viewInsets.bottom),
-                      child: AddTaskScreen((newTaskTitle) {
-//                        setState(() {
-//                          newTaskTitle ?? tasks.add(Task(name: "Don't hit the green arrow: Null value."));
-//                          tasks.add(Task(name: newTaskTitle));
-//                        });
-                        Navigator.pop(context);
-                      }),
+                      child: AddTaskScreen(),
                     ),
                   ));
         },
